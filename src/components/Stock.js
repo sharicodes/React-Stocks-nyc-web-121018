@@ -1,21 +1,22 @@
-import React from 'react'
+import React from "react";
 
-const Stock = () => (
-  <div>
-
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">{
-            //Company Name
-          }</h5>
-        <p className="card-text">{
-            //ticker: stock price
-          }</p>
+const Stock = props => {
+  // console.log(props);
+  return (
+    <div>
+      <div
+        className="card"
+        onClick={
+          props.id ? e => props.buyStock(props.id, props.location) : null
+        }
+      >
+        <div className="card-body">
+          <h5 className="card-title">{props.name}</h5>
+          <p className="card-text">{props.price}</p>
+        </div>
       </div>
     </div>
+  );
+};
 
-
-  </div>
-);
-
-export default Stock
+export default Stock;
